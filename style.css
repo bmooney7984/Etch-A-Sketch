@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+}
+
+.etchable {
+  width: 6vw;
+  height: 6vw;
+  border: 1px solid black;
+  background-color: gray;
+}
