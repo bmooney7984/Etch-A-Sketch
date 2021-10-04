@@ -18,3 +18,18 @@ function makeGrid() {
 }
 
 makeGrid();
+
+function makeEtchable(box) {
+  box.addEventListener('mouseenter', function() {
+    box.style.cssText = 'background-color: blue;';
+  });
+}
+
+function addTrail() {
+  const etchables = document.querySelectorAll('.etchable');
+  etchables.forEach(function(etchable) {
+    makeEtchable(etchable);
+  });
+}
+
+addTrail();
