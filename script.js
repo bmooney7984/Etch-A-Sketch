@@ -24,7 +24,14 @@ function makeGrid(boxesPerSide) {
 
 function makeEtchable(box) {
   box.addEventListener('mouseenter', function() {
-    box.style.cssText = 'background-color: blue;';
+    if (box.style['background-color']) {
+      const colorValueEnd = box.style['background-color'].indexOf(',');
+      let colorValue = box.style['background-color'].slice(4, colorValueEnd);
+      colorValue = Number(colorValue);
+      box.style.cssText = `background-color: rgb(${(colorValue - 26).toString()}, ${(colorValue - 26).toString()}, ${(colorValue - 26).toString()});`;
+    } else {
+      box.style.cssText = 'background-color: rgb(229, 229, 229)';
+    }
   });
 }
 
